@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -39,4 +42,23 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
+
+  public XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
+  public boolean xboxA = xboxController.getAButton();
+  public boolean xboxB = xboxController.getBButton();
+  public boolean xboxX = xboxController.getXButton();
+  public boolean xboxY = xboxController.getYButton();
+  public boolean back = xboxController.getBackButton();
+  public boolean start = xboxController.getStartButton();
+  public boolean leftBumper = xboxController.getBumper(Hand.kLeft);
+  public boolean rightBumper = xboxController.getBumper(Hand.kRight);
+  public boolean leftStick = xboxController.getStickButton(Hand.kLeft);
+  public boolean rightStick = xboxController.getStickButton(Hand.kRight);
+  public double leftTrigger = xboxController.getTriggerAxis(Hand.kLeft);
+  public double rightTrigger = xboxController.getTriggerAxis(Hand.kRight);
+  public double leftStickX = xboxController.getX(Hand.kLeft);
+  public double leftStickY = xboxController.getY(Hand.kLeft);
+  public double rightStickX = xboxController.getX(Hand.kRight);
+  public double rightStickY = xboxController.getY(Hand.kRight);
+
 }
