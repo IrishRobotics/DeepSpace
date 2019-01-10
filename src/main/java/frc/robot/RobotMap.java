@@ -30,7 +30,11 @@ public class RobotMap {
   public static final int BACK_LEFT_MOTOR = 3;
 
   public static final int LEFT_ACTUATOR = 4;
-  public final static int RIGHT_ACTUATOR = 5;
+  public static final int RIGHT_ACTUATOR = 5;
+
+  public static final int COMPRESSOR = 0;
+  public static final int SOLINOID_1 = 1;
+  public static final int SOLINOID_2 = 2;
 
   public static final int XBOX_CONTROLLER = 0;
   
