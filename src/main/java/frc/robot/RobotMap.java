@@ -29,6 +29,9 @@ public class RobotMap {
   public static final int FRONT_LEFT_MOTOR = 2;
   public static final int BACK_LEFT_MOTOR = 3;
 
+  public static final int LEFT_ACTUATOR = 4;
+  public final static int RIGHT_ACTUATOR = 5;
+
   public static final int XBOX_CONTROLLER = 0;
   
   //number of auto && tele modes
