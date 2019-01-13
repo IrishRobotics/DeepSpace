@@ -14,24 +14,35 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  // For example to map the left and right motors, you could define the
-  // following variables to use with your drivetrain subsystem.
-  // public static int leftMotor = 1;
-  // public static int rightMotor = 2;
 
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
-  
+  // TallonSRX CAN Addresses
   public static final int FRONT_RIGHT_MOTOR = 0;
-  public static final int BACK_RIGHT_MOTOR = 1;
-  public static final int FRONT_LEFT_MOTOR = 2;
-  public static final int BACK_LEFT_MOTOR = 3;
+  public static final int BACK_RIGHT_MOTOR = 0;
+  // VictorSPX CAN Addresses
+  public static final int FRONT_LEFT_MOTOR = 1;
+  public static final int BACK_LEFT_MOTOR = 1;
 
+  // PWM Motors/Actuators
+  public static final int LEFT_INTAKE_MOTOR = 1;
+  public static final int RIGHT_INTAKE_MOTOR = 2;
+
+  public static final int LEFT_ACTUATOR = 3;
+  public static final int RIGHT_ACTUATOR = 4;
+
+  // Pneumatics
+  public static final int COMPRESSOR = 0;
+  public static final int HATCH_SOLINOID_1 = 1;
+  public static final int HATCH_SOLINOID_2 = 2;
+  public static final int HATCH_SOLINOID_3 = 3;
+  public static final int LIFT_SOLINOID_1 = 4;
+  public static final int LIFT_SOLINOID_2 = 5;
+  public static final int LIFT_SOLINOID_3 = 6;
+  public static final int LIFT_SOLINOID_4 = 7;
+
+  // Misc.
   public static final int XBOX_CONTROLLER = 0;
-  
-  //number of auto && tele modes
+
+  // number of auto && tele modes
   public static final int AUTO_MODES = 2;
   public static final int SANDSTORM_TELE_MODES = 0;
   public static final int TELE_MODES = 2;
