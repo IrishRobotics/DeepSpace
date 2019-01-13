@@ -39,8 +39,26 @@ public class RobotMap {
   public static final int LIFT_SOLINOID_3 = 6;
   public static final int LIFT_SOLINOID_4 = 7;
 
+  //PID
+  public static final int PID_P = 0;
+  public static final int PID_I = 0;
+  public static final int PID_D = 0;
+
+  //Goal Heights (in inches to center)
+  public static final double HATCH_TAPE = 25.5;
+  public static final int HATCH_BOTTOM = 19;
+  public static final int HATCH_MIDDLE = 47;
+  public static final int HATCH_TOP = 75;
+  public static final double PORT_TAPE = 34;
+  public static final double PORT_BOTTOM = 27.5;
+  public static final double PORT_MIDDLE = 55.5;
+  public static final double PORT_TOP = 83.5;
+  public static final double PORT_SHIP = 39.75;
+
   // Misc.
   public static final int XBOX_CONTROLLER = 0;
+  public static final int FOV_X = 640;
+  public static final int FOV_Y = 480;
 
   // number of auto && tele modes
   public static final int AUTO_MODES = 2;
