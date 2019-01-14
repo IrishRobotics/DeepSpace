@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.commands.Allignment;
+import frc.robot.commands.Allign;
 
 
 
@@ -50,7 +50,7 @@ public class VisionTracking extends PIDSubsystem { // This system extends PIDSub
     }
 	
     public void initDefaultCommand() {
-        setDefaultCommand(new Allignment());
+        setDefaultCommand(new Allign());
     }
 
     protected double returnPIDInput() {

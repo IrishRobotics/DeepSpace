@@ -13,8 +13,8 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class Allignment extends Command {
-  public Allignment() {
+public class Allign extends Command {
+  public Allign() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_subsystem);
   }
