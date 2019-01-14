@@ -18,6 +18,9 @@ public class VisionTracking extends PIDSubsystem { // This system extends PIDSub
     double leftDrive;
     double rightDrive;
     double coordX;
+    double coordY;
+    double diviationX;
+    double diviationY;
     AHRS ahrs = new AHRS(SPI.Port.kMXP);
 
 	public VisionTracking() {
@@ -28,18 +31,15 @@ public class VisionTracking extends PIDSubsystem { // This system extends PIDSub
     }
 
     public void visionCalc() {
+
+        diviationX = (coordX - (RobotMap.PICTURE_WIDTH / 2)) / RobotMap.PICTURE_WIDTH * RobotMap.FOV_X;
+        diviationY = (coordY - (RobotMap.PICTURE_HEIGHT / 2)) / RobotMap.PICTURE_HEIGHT * RobotMap.FOV_Y;
+
+
         if (Robot.isHatch == true) { //calculates distance based on hatch height
-            goalDist = 0;
+            goalDist = (Math.sin(diviationY) * Math.sin(90 - diviationY)) / RobotMap.HATCH_TAPE - (RobotMap.CAMERA_HEIGHT);
         } else if (Robot.isBall == true) { //calculates distance based on port height
-            goalDist = 0;
-        }
-
-        if (coordX < RobotMap.FOV_X/2) { //goal angle set to negative
-
-        } else if (coordX > RobotMap.FOV_X/2) { //goal angle set to positive
-
-        } else { //goal angle set to 0
-
+            goalDist = (Math.sin(diviationY) * Math.sin(90 - diviationY)) / RobotMap.PORT_TAPE - (RobotMap.CAMERA_HEIGHT);
         }
     }
     

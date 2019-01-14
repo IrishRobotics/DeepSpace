@@ -57,8 +57,11 @@ public class RobotMap {
 
   // Misc.
   public static final int XBOX_CONTROLLER = 0;
-  public static final int FOV_X = 640;
-  public static final int FOV_Y = 480;
+  public static final int PICTURE_WIDTH = 640;
+  public static final int PICTURE_HEIGHT = 480;
+  public static final double FOV_X = 62;
+  public static final double FOV_Y = 34;
+  public static final double CAMERA_HEIGHT = 5;
 
   // number of auto && tele modes
   public static final int AUTO_MODES = 2;
