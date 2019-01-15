@@ -37,9 +37,9 @@ public class VisionTracking extends PIDSubsystem { // This system extends PIDSub
 
 
         if (Robot.isHatch == true) { //calculates distance based on hatch height
-            goalDist = ((RobotMap.HATCH_TAPE - RobotMap.CAMERA_HEIGHT) * Math.sin(90 - diviationY)) / Math.sin(diviationY);
+            goalDist = (RobotMap.HATCH_TAPE - RobotMap.CAMERA_HEIGHT) / Math.tan(diviationY);
         } else if (Robot.isBall == true) { //calculates distance based on port height
-            goalDist = ((RobotMap.PORT_TAPE - RobotMap.CAMERA_HEIGHT) * Math.sin(90 - diviationY)) / Math.sin(diviationY);
+            goalDist = (RobotMap.PORT_TAPE - RobotMap.CAMERA_HEIGHT) / Math.tan(diviationY);
         }
     }
     
