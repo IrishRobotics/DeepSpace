@@ -44,30 +44,6 @@ public class RobotMap {
   public static final int PID_I = 0;
   public static final int PID_D = 0;
 
-  //Goal Heights (in inches to center)
-  public static final double HATCH_TAPE = 25.5;
-  public static final int HATCH_BOTTOM = 19;
-  public static final int HATCH_MIDDLE = 47;
-  public static final int HATCH_TOP = 75;
-  public static final double PORT_TAPE = 34;
-  public static final double PORT_BOTTOM = 27.5;
-  public static final double PORT_MIDDLE = 55.5;
-  public static final double PORT_TOP = 83.5;
-  public static final double PORT_SHIP = 39.75;
-
-  //Robot Dimensions
-  public static final double ROBOT_LENGTH = 32.3;
-  public static final double ROBOT_WIDTH = 27.5;
-  public static final double BUMPER_THICKNESS = 3;
-  public static final double ARM_SETBACK = 30;
-  public static final double ARM_HEIGHT = 42;
-  public static final double ARM_LENGTH = 50;
-  public static final double INTAKE_WIDTH = 19;
-  public static final double BALL_INTAKE_HEIGHT = 16;
-  public static final double BALL_INTAKE_DEPTH = 14;
-  public static final double HATCH_INTAKE_HEIGHT = 10;
-  public static final double HATCH_INTAKE_DEPTH = 6;
-
   // Misc.
   public static final int XBOX_CONTROLLER = 0;
   public static final int PICTURE_WIDTH = 640;
