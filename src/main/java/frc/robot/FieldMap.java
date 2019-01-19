@@ -45,6 +45,8 @@ public class FieldMap {
   public static final double INTAKE_WIDTH = 19;
   public static final double BALL_INTAKE_HEIGHT = 16;
   public static final double BALL_INTAKE_DEPTH = 14;
+  public static final double BALL_INTAKE_OFFSET = -3;
   public static final double HATCH_INTAKE_HEIGHT = 10;
   public static final double HATCH_INTAKE_DEPTH = 6;
+  public static final double HATCH_INTAKE_OFFSET = 6;
 }
