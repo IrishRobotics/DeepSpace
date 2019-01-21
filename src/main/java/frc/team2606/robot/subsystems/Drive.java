@@ -28,6 +28,8 @@ public class Drive extends Subsystem {
     private VictorSPX backRight;
     private DifferentialDrive drive;
 
+    private static Drive driveInstance = new Drive();
+
     public Drive() {
         super();
         frontLeft = new WPI_TalonSRX(RobotMap.FRONT_LEFT_MOTOR);
@@ -44,6 +46,10 @@ public class Drive extends Subsystem {
         //rightEncoder = RobotMap.RIGHT_ENCODER;
         //leftEncoder.setDistancePerPulse((0.5 * Math.PI) / 360.0);
         //rightEncoder.setDistancePerPulse((0.5 * Math.PI) / 360.0);
+    }
+
+    public static Drive getInstance() {
+        return driveInstance;
     }
 
     /**

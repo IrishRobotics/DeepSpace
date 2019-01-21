@@ -8,10 +8,10 @@
 package frc.team2606.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import frc.team2606.lib.util.CrashTracker;
 import frc.team2606.robot.refs.ArmMapping;
 import frc.team2606.robot.subsystems.Drive;
 import frc.team2606.robot.subsystems.ExampleSubsystem;
@@ -26,28 +26,30 @@ import frc.team2606.robot.subsystems.ExampleSubsystem;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI oi;
-  public static Drive drive;
   public static ArmMapping ArmMap;
-  public static Timer time;
-  public static boolean isHatch;
-  public static boolean isBall;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
+  public static Drive drive = Drive.getInstance();
+
+  public Robot() {
+    CrashTracker.logRobotConstruction();
+}
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
   @Override
   public void robotInit() {
-    oi = new OI();
-    drive = new Drive();
-    time = new Timer();
-    time.reset();
-    time.start();
+    try {
+      CrashTracker.logRobotInit();
 
-    ArmMap.armMapInit();
+      ArmMap.armMapInit();
+    } catch (Throwable t) {
+      CrashTracker.logThrowableCrash(t);
+      throw t;
+    }
   }
 
   /**
@@ -69,6 +71,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
+    try {
+      CrashTracker.logDisabledInit();
+    } catch (Throwable t) {
+      CrashTracker.logThrowableCrash(t);
+      throw t;
+    }
   }
 
   @Override
@@ -89,7 +97,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    try {
+      CrashTracker.logAutoInit();
     m_autonomousCommand = m_chooser.getSelected();
+    } catch (Throwable t) {
+      CrashTracker.logThrowableCrash(t);
+      throw t;
+    }
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -110,10 +124,18 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-  }
+    try {
+
+    } catch (Throwable t) {
+        CrashTracker.logThrowableCrash(t);
+        throw t;
+    }
+}
 
   @Override
   public void teleopInit() {
+    try {
+      CrashTracker.logTeleopInit();
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
@@ -121,7 +143,11 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+  } catch (Throwable t) {
+    CrashTracker.logThrowableCrash(t);
+    throw t;
   }
+}
 
   /**
    * This function is called periodically during operator control.
@@ -129,7 +155,12 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    try {
+  } catch (Throwable t) {
+    CrashTracker.logThrowableCrash(t);
+    throw t;
   }
+}
 
   /**
    * This function is called periodically during test mode.
