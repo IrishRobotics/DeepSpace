@@ -1,8 +1,8 @@
-package frc.robot.refs;
+package frc.team2606.robot.refs;
 
-import frc.robot.FieldMap;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
+import frc.team2606.robot.FieldMap;
+import frc.team2606.robot.Robot;
+import frc.team2606.robot.RobotMap;
 
 public class VisionCalc {
 

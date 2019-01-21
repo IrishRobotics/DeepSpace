@@ -6,7 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 
-package frc.robot.subsystems;
+package frc.team2606.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
@@ -14,8 +14,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import frc.robot.RobotMap;
-import frc.robot.commands.TankDrive;
+import frc.team2606.robot.RobotMap;
+import frc.team2606.robot.commands.TankDrive;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.

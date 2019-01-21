@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package frc.team2606.robot;
 
 /**
  * The FieldMap is a mapping for the dimensions of the field elements

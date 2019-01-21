@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.team2606.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.team2606.robot.Robot;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class LiftRobot extends Command {
-  public LiftRobot() {
+public class ExampleCommand extends Command {
+  public ExampleCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_subsystem);
   }
