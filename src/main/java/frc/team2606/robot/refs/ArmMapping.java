@@ -19,4 +19,16 @@ public class ArmMapping {
     public String armPos(int i){
         return armMap.get(i);
     }
+
+    public double getArmLength(int i){
+        String length = armPos(i).split(":", 2)[0];
+        String value = length.split(";", 2)[1];
+        return Double.parseDouble(value);
+    }
+
+    public double getArmHeight(int i){
+        String height = armPos(i).split(":", 2)[1];
+        String value = height.split(";", 2)[1];
+        return Double.parseDouble(value);
+    }
 }
