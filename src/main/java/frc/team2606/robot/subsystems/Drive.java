@@ -21,7 +21,6 @@ import frc.team2606.lib.geometry.Pose2dWithCurvature;
 import frc.team2606.lib.geometry.Rotation2d;
 import frc.team2606.lib.trajectory.timing.TimedState;
 import frc.team2606.robot.RobotMap;
-import frc.team2606.robot.commands.TankDrive;
 import frc.team2606.robot.loops.Loop;
 
 /**
