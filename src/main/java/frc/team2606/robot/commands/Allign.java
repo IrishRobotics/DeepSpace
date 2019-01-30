@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.team2606.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class Allign extends Command {
   public Allign() {
