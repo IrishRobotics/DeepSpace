@@ -13,14 +13,15 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.team2606.lib.drivers.TalonSRXFactory;
 import frc.team2606.lib.drivers.VictorSPXFactory;
 import frc.team2606.lib.geometry.Pose2d;
 import frc.team2606.lib.geometry.Pose2dWithCurvature;
 import frc.team2606.lib.geometry.Rotation2d;
 import frc.team2606.lib.trajectory.timing.TimedState;
+import frc.team2606.lib.util.DriveSignal;
 import frc.team2606.robot.RobotMap;
+import frc.team2606.robot.loops.ILooper;
 import frc.team2606.robot.loops.Loop;
 
 /**
@@ -32,7 +33,6 @@ public class Drive extends Subsystem {
     // Hardware
     private TalonSRX frontLeft, frontRight;
     private VictorSPX backLeft, backRight;
-    private DifferentialDrive drive;
     // Control States
     private DriveControlState driveControlState;
     // Hardware States
@@ -109,7 +109,51 @@ public class Drive extends Subsystem {
         return driveInstance;
     }
 
-    public Rotation2d getHeading() {
+    @Override
+    public void registerEnabledLoops(ILooper in) {
+        in.register(loop);
+    }
+
+    /**
+     * Configure talons for open loop control
+     */
+    public synchronized void setOpenLoop(DriveSignal signal) {
+        if (driveControlState != DriveControlState.OPEN_LOOP) {
+            //setBrakeMode(false);
+
+            System.out.println("Switching to open loop");
+            System.out.println(signal);
+            driveControlState = DriveControlState.OPEN_LOOP;
+            frontLeft.configNeutralDeadband(0.04, 0);
+            frontRight.configNeutralDeadband(0.04, 0);
+        }
+        periodicIO.left_demand = signal.getLeft();
+        periodicIO.right_demand = signal.getRight();
+        periodicIO.left_feedforward = 0.0;
+        periodicIO.right_feedforward = 0.0;
+    }
+
+    /**
+     * Configures talons for velocity control
+     */
+    public synchronized void setVelocity(DriveSignal signal, DriveSignal feedforward) {
+        if (driveControlState != DriveControlState.PATH_FOLLOWING) {
+            // We entered a velocity control state.
+            //setBrakeMode(true);
+            //frontLeft.selectProfileSlot(kLowGearVelocityControlSlot, 0);
+            //frontRight.selectProfileSlot(kLowGearVelocityControlSlot, 0);
+            frontLeft.configNeutralDeadband(0.0, 0);
+            frontRight.configNeutralDeadband(0.0, 0);
+
+            driveControlState = DriveControlState.PATH_FOLLOWING;
+        }
+        periodicIO.left_demand = signal.getLeft();
+        periodicIO.right_demand = signal.getRight();
+        periodicIO.left_feedforward = feedforward.getLeft();
+        periodicIO.right_feedforward = feedforward.getRight();
+    }
+
+    public synchronized Rotation2d getHeading() {
         return null;
     }
 
