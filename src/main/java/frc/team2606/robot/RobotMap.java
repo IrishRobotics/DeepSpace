@@ -22,7 +22,7 @@ public class RobotMap {
   public static final int FRONT_LEFT_MOTOR = 1;
   public static final int BACK_LEFT_MOTOR = 1;
 
-  //Other CAN Info
+  // Other CAN Info
   public static final int LONG_CAN_TIMEOUT = 10;
   public static final int DRIVE_VOLTAGE_RAMP_RATE = 5;
 
@@ -43,12 +43,11 @@ public class RobotMap {
   public static final int LIFT_SOLINOID_3 = 6;
   public static final int LIFT_SOLINOID_4 = 7;
 
-  //PID
+  // PID
   public static final int PID_P = 0;
   public static final int PID_I = 0;
   public static final int PID_D = 0;
 
-  @Deprecated
   // Vision Stuff
   public static final int PICTURE_WIDTH = 640;
   public static final int PICTURE_HEIGHT = 480;

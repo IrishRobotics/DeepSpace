@@ -2,7 +2,6 @@ package frc.team2606.robot.loops;
 
 import edu.wpi.first.wpilibj.Notifier;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team2606.lib.util.CrashTrackingRunnable;
 import frc.team2606.robot.RobotMap;
