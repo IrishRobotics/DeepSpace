@@ -22,6 +22,10 @@ public class RobotMap {
   public static final int FRONT_LEFT_MOTOR = 1;
   public static final int BACK_LEFT_MOTOR = 1;
 
+  //Other CAN Info
+  public static final int LONG_CAN_TIMEOUT = 10;
+  public static final int DRIVE_VOLTAGE_RAMP_RATE = 5;
+
   // PWM Motors/Actuators
   public static final int LEFT_INTAKE_MOTOR = 1;
   public static final int RIGHT_INTAKE_MOTOR = 2;
@@ -44,13 +48,17 @@ public class RobotMap {
   public static final int PID_I = 0;
   public static final int PID_D = 0;
 
-  // Misc.
-  public static final int XBOX_CONTROLLER = 0;
+  @Deprecated
+  // Vision Stuff
   public static final int PICTURE_WIDTH = 640;
   public static final int PICTURE_HEIGHT = 480;
   public static final double FOV_X = 62;
   public static final double FOV_Y = 34;
   public static final double CAMERA_HEIGHT = 5;
+
+  // Misc.
+  public static final int XBOX_CONTROLLER = 0;
+  public static final int NOTIFIER_PERIOD = 10;
 
   // number of auto && tele modes
   public static final int AUTO_MODES = 2;

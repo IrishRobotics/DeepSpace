@@ -4,9 +4,7 @@ import frc.team2606.lib.geometry.Pose2d;
 import frc.team2606.lib.geometry.Rotation2d;
 import frc.team2606.lib.geometry.Translation2d;
 
-
 //TODO figure out how CubicHermiteSpline works
-
 
 /**
  * Temporary spline for testing
