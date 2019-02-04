@@ -7,7 +7,14 @@
 
 package frc.team2606.robot.subsystems;
 
-public class HatchEjector extends Subsystem {
+public class Intake extends Subsystem {
+
+  public synchronized static Intake getInstance() {
+    if (instance == null) {
+      instance = new Intake();
+    }
+    return instance;
+  }
 
   @Override
   public boolean checkSystem() {

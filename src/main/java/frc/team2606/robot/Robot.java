@@ -174,8 +174,8 @@ public class Robot extends TimedRobot {
     SmartDashboard.putString("Match Cycle", "TELEOP");
     double timestamp = Timer.getFPGATimestamp();
 
-    double rThrottle = .getRightThrottle;
-    double lThrottle = .getLeftThrottle;
+    double rThrottle = OI.getRightThrottle();
+    double lThrottle = OI.getLeftThrottle();
 
     drive.setOpenLoop(new DriveSignal(rThrottle, lThrottle));
 

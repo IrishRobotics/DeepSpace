@@ -43,28 +43,36 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
 
-  public XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
-  
-  public boolean xboxA = xboxController.getAButton();
-  public boolean xboxB = xboxController.getBButton();
-  public boolean xboxX = xboxController.getXButton();
-  public boolean xboxY = xboxController.getYButton();
+  public static XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
 
-  public boolean back = xboxController.getBackButton();
-  public boolean start = xboxController.getStartButton();
+  public static boolean xboxA = xboxController.getAButton();
+  public static boolean xboxB = xboxController.getBButton();
+  public static boolean xboxX = xboxController.getXButton();
+  public static boolean xboxY = xboxController.getYButton();
 
-  public boolean leftBumper = xboxController.getBumper(Hand.kLeft);
-  public boolean rightBumper = xboxController.getBumper(Hand.kRight);
-  
-  public boolean leftStick = xboxController.getStickButton(Hand.kLeft);
-  public boolean rightStick = xboxController.getStickButton(Hand.kRight);
- 
-  public double leftTrigger = xboxController.getTriggerAxis(Hand.kLeft);
-  public double rightTrigger = xboxController.getTriggerAxis(Hand.kRight);
-  
-  public double leftStickX = xboxController.getX(Hand.kLeft);
-  public double leftStickY = xboxController.getY(Hand.kLeft);
-  public double rightStickX = xboxController.getX(Hand.kRight);
-  public double rightStickY = xboxController.getY(Hand.kRight);
+  public static boolean back = xboxController.getBackButton();
+  public static boolean start = xboxController.getStartButton();
+
+  public static boolean leftBumper = xboxController.getBumper(Hand.kLeft);
+  public static boolean rightBumper = xboxController.getBumper(Hand.kRight);
+
+  public static boolean leftStick = xboxController.getStickButton(Hand.kLeft);
+  public static boolean rightStick = xboxController.getStickButton(Hand.kRight);
+
+  public static double leftTrigger = xboxController.getTriggerAxis(Hand.kLeft);
+  public static double rightTrigger = xboxController.getTriggerAxis(Hand.kRight);
+
+  public static double leftStickX = xboxController.getX(Hand.kLeft);
+  public static double leftStickY = xboxController.getY(Hand.kLeft);
+  public static double rightStickX = xboxController.getX(Hand.kRight);
+  public static double rightStickY = xboxController.getY(Hand.kRight);
+
+  public static double getRightThrottle() {
+    return rightStickY;
+  }
+
+  public static double getLeftThrottle() {
+    return leftStickY;
+  }
 
 }
