@@ -8,11 +8,13 @@
 package frc.team2606.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team2606.lib.util.CrashTracker;
+import frc.team2606.lib.util.DriveSignal;
 import frc.team2606.robot.loops.Looper;
 import frc.team2606.robot.refs.ArmMapping;
 import frc.team2606.robot.subsystems.Drive;
@@ -170,6 +172,12 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     SmartDashboard.putString("Match Cycle", "TELEOP");
+    double timestamp = Timer.getFPGATimestamp();
+
+    double rThrottle = .getRightThrottle;
+    double lThrottle = .getLeftThrottle;
+
+    drive.setOpenLoop(new DriveSignal(rThrottle, lThrottle));
 
     Scheduler.getInstance().run();
     try {

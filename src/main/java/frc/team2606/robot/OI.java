@@ -44,18 +44,24 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
   public XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
+  
   public boolean xboxA = xboxController.getAButton();
   public boolean xboxB = xboxController.getBButton();
   public boolean xboxX = xboxController.getXButton();
   public boolean xboxY = xboxController.getYButton();
+
   public boolean back = xboxController.getBackButton();
   public boolean start = xboxController.getStartButton();
+
   public boolean leftBumper = xboxController.getBumper(Hand.kLeft);
   public boolean rightBumper = xboxController.getBumper(Hand.kRight);
+  
   public boolean leftStick = xboxController.getStickButton(Hand.kLeft);
   public boolean rightStick = xboxController.getStickButton(Hand.kRight);
+ 
   public double leftTrigger = xboxController.getTriggerAxis(Hand.kLeft);
   public double rightTrigger = xboxController.getTriggerAxis(Hand.kRight);
+  
   public double leftStickX = xboxController.getX(Hand.kLeft);
   public double leftStickY = xboxController.getY(Hand.kLeft);
   public double rightStickX = xboxController.getX(Hand.kRight);
