@@ -1,0 +1,30 @@
+Left Trigger  = Ball Out
+Right Trigger = Ball In
+
+Left Bumper  = null /
+Right Bumper = null /
+
+Button A = Lift Robot
+Button B = Drive Towards Target (hold)
+Button X = Rocket Ball Level
+Button Y = 
+
+Left Stick:
+    X axis = Left Tank
+    Y axis = null /
+    Click  = null /
+
+Right Stick:
+    X axis = Rihgt Tank
+    Y axis = null /
+    Click  = null /
+
+Cross Joystick:
+    Up    = Upper Level 
+    Down  = Lower Level
+    Left  = Toggle Ball/Hatch
+    Right = Middle Level
+
+Start Button = null /
+Menu  Button = null /
+Big X Button = null /
