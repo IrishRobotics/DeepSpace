@@ -48,13 +48,6 @@ public class RobotMap {
   public static final int PID_I = 0;
   public static final int PID_D = 0;
 
-  // Vision Stuff
-  public static final int PICTURE_WIDTH = 640;
-  public static final int PICTURE_HEIGHT = 480;
-  public static final double FOV_X = 62;
-  public static final double FOV_Y = 34;
-  public static final double CAMERA_HEIGHT = 5;
-
   // Misc.
   public static final int XBOX_CONTROLLER = 0;
   public static final int NOTIFIER_PERIOD = 10;
