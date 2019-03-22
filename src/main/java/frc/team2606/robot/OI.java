@@ -68,11 +68,13 @@ public class OI {
   public static double rightStickY = xboxController.getY(Hand.kRight);
 
   public static double getRightThrottle() {
-    return rightStickY;
+    //return rightStickY;
+    return xboxController.getY(Hand.kRight);
   }
 
   public static double getLeftThrottle() {
-    return leftStickY;
+    //return leftStickY;
+    return xboxController.getY(Hand.kLeft);
   }
 
 }
